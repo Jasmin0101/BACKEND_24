@@ -5,6 +5,7 @@ import app.views.task_2 as task_2
 import app.views.task_3 as task_3
 import app.views.task_4 as task_4
 import app.views.task_5 as task_5
+import app.views.task_7 as task_7
 
 urlpatterns = [
     path(
@@ -45,5 +46,10 @@ urlpatterns = [
     path(
         "task5/",
         include(task_5.router.urls),
+    ),
+    path(
+        "task7/login",
+        task_7.login,
+        name="task7.login",
     ),
 ]
