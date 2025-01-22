@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinja Шаблон</title>
+</head>
+<body>
+
+    <!-- Кнопка возврата на корневой URL -->
+    <a href="/">
+        <button>Вернуться на главную</button>
+    </a>
+
+    <br></br>
+
+    <!-- Место для вставки контента -->
+    {% block content %}
+    <!-- Ваш контент будет вставлен сюда -->
+    {% endblock %}
+</body>
+</html>

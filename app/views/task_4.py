@@ -46,3 +46,30 @@ def login(request):
             "access_token": str(refresh.access_token),
         }
     )
+
+
+@require_http_methods(["POST"])
+def register(request):
+    data = json.loads(request.body)
+    email = data.get("email")
+    password = data.get("password")
+
+    # Проверка наличия email и пароля
+    if not email or not password:
+        return HttpResponseBadRequest("Login and password are required.")
+
+    try:
+        # Ищем пользователя по email
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return HttpResponseBadRequest("User with such email alrady exist")
+
+    refresh = RefreshToken.for_user(user)
+
+    # Возвращаем успешный ответ
+    return JsonResponse(
+        {
+            "message": "Register successful.",
+            "access_token": str(refresh.access_token),
+        }
+    )

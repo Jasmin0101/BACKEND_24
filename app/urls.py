@@ -1,9 +1,17 @@
-from django.urls import path
-import app.views.task_3 as task_3
-import app.views.task_2 as task_2
+from django.urls import include, path
 
+import app.views.home as home
+import app.views.task_2 as task_2
+import app.views.task_3 as task_3
+import app.views.task_4 as task_4
+import app.views.task_5 as task_5
 
 urlpatterns = [
+    path(
+        "",
+        home.home,
+        name="index",
+    ),
     path(
         "task2/page1",
         task_2.first_GET_request,
@@ -19,14 +27,23 @@ urlpatterns = [
         task_2.first_POST_request,
         name="first_POST_request",
     ),
-    # path(
-    #     "task3/page1",
-    #     task_3.first_GET_request,
-    #     name="first_GET_request.task3",
-    # ),
     path(
         "task3/page1",
         task_3.first_POST_request,
         name="first_POST_request.task3",
+    ),
+    path(
+        "task4/login",
+        task_4.login,
+        name="login.task4",
+    ),
+    path(
+        "task4/register",
+        task_4.register,
+        name="register.task4",
+    ),
+    path(
+        "task5/",
+        include(task_5.router.urls),
     ),
 ]
