@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite List</title>
+  </head>
+  <body>
+    <h1>Привет, привет! :333</h1>
+    <p>Если хочешь, можешь поделиться списком своих любимых эээ чего-то :000</p>
+
+    <!-- Проверка наличия элементов в списке -->
+    {% if favorite|length != 0 %}
+    <h2>Ваш список любимых:</h2>
+
+    <ul>
+      <!-- Перебор элементов списка -->
+      {% for i in favorite %}
+      <li>{{ i }}</li>
+
+      {% endfor %}
+    </ul>
+    {% else %}
+    <h2>Пуста и грустна :c</h2>
+    {% endif %}
+
+    <p>Пупуп отправь мне что -то чтобы было не пусто :000</p>
+    <form method="POST" action="/task3/page1">
+      {% csrf_token %}
+      <input type="text" id="name" name="name" required />
+      <button type="submit">Отправить</button>
+    </form>
+  </body>
+</html>
