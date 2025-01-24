@@ -169,7 +169,7 @@ def recovery(request):
         refresh = RefreshToken.for_user(user)
         send_email(
             "Восстановление пароля",
-            f"Ссылка для восстановления: /recovery/new_pass?token={refresh} ",
+            f"Ссылка для восстановления: https://backend24-production.up.railway.app/task7/recovery/new_pass?token={refresh} ",
             user.email,
         )
 
