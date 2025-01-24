@@ -210,7 +210,7 @@ def recovery_new_pass(request):
 
         user = User.objects.get(id=int(user_id))
 
-        user.password = (make_password(str(password)),)
+        user.password = make_password(str(password))
         user.save()
 
         response = redirect("/task7/profile")
