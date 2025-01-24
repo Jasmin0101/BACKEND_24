@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Авторизация</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>Вход в систему</h2>
     <form method="POST" action="/task7/login">
-        {% csrf_token %} 
-        <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="Введите ваш email">
-        </div>
-        <div>
-            <label for="password">Пароль</label>
-            <input type="password" id="password" name="password" required placeholder="Введите ваш пароль">
-        </div>
-        <button type="submit">Войти</button>
-        {% if error_message %}
-            <p>{{ error_message }}</p>
-        {% endif %}
+      {% csrf_token %}
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Введите ваш email"
+        />
+      </div>
+      <div>
+        <label for="password">Пароль</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Введите ваш пароль"
+        />
+      </div>
+      <button type="submit">Войти</button>
+      {% if error_message %}
+      <p>{{ error_message }}</p>
+      {% endif %}
     </form>
     <p>Нет аккаунта? <a href="/task7/register">Зарегистрироваться</a></p>
-</body>
+
+    <p>Забыли пароль? <a href="/task7/recovery">Восстановите</a></p>
+  </body>
 </html>

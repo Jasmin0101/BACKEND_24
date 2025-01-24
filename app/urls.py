@@ -52,4 +52,29 @@ urlpatterns = [
         task_7.login,
         name="task7.login",
     ),
+    path(
+        "task7/recovery",
+        task_7.recovery,
+        name="task7.recovery",
+    ),
+    path(
+        "task7/recovery/new_pass",
+        task_7.recovery_new_pass,
+        name="task7.recovery_new_pass",
+    ),
+    path(
+        "task7/register",
+        task_7.registration,
+        name="task7.registration",
+    ),
+    path(
+        "task7/profile",
+        task_7.user_profile,
+        name="task7.profile",
+    ),
+    path(
+        "task7/profile/logout",
+        task_7.logout,
+        name="task7.logout",
+    ),
 ]

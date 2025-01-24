@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Восстановление пароля</title>
+  </head>
+  <body>
+    <h1>Восстановление пароля</h1>
+    <form action="/task7/recovery" method="POST">
+      <div>
+        <label for="email">Введите вашу почту</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Введите вашу почту"
+          required
+        />
+      </div>
+      <button type="submit">Отправить ссылку для восстановления</button>
+    </form>
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+  </body>
+</html>

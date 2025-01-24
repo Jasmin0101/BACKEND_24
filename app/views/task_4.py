@@ -62,7 +62,7 @@ def register(request):
         # Ищем пользователя по email
         user = User.objects.get(email=email)
     except User.DoesNotExist:
-        return HttpResponseBadRequest("User with such email alrady exist")
+        return HttpResponseBadRequest("User with such email already exist")
 
     refresh = RefreshToken.for_user(user)
 

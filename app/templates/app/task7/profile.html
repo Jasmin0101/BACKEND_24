@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Профиль</title>
+  </head>
+  <body>
+    <h1>Профиль</h1>
+    <p>Ваш текущий email: {{ email }}</p>
+    <form method="POST" action="/task7/profile">
+      <label for="email">Новая почта</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Введите новую почту"
+        required
+      />
+
+      <button type="submit">Сменить почту</button>
+    </form>
+    <form action="/task7/profile/logout">
+      <button type="submit">Выйти</button>
+    </form>
+  </body>
+</html>
