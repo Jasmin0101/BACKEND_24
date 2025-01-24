@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -133,3 +134,9 @@ SIMPLE_JWT = {
     "SIGNING_KEY": SECRET_KEY,  # Ключ для подписи токенов
     "AUTH_HEADER_TYPES": ("Bearer",),  # Тип заголовка для токена
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://backend24-production.up.railway.app/",
+]
+
+PORT = int(os.getenv("PORT", 8000))
