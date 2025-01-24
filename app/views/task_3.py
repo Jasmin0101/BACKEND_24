@@ -15,7 +15,6 @@ favorite = []
 #     )
 
 
-@csrf_exempt
 def first_POST_request(request):
     if request.method == "POST":
         name = request.POST.get("name")

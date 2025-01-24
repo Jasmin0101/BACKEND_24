@@ -20,8 +20,6 @@ from app.models import User
 from app.sender import send_email
 
 
-@require_http_methods(["GET", "POST"])
-@csrf_exempt
 def login(request):
 
     if request.method == "POST":
@@ -66,8 +64,6 @@ def login(request):
     return render(request, "app/task7/login.html")
 
 
-# @require_http_methods(["POST"])
-@csrf_exempt
 def registration(request):
     if request.method == "POST":
         email = request.POST.get("email")
@@ -105,7 +101,6 @@ def registration(request):
         )
 
 
-@csrf_exempt
 def user_profile(request):
 
     try:
@@ -139,7 +134,6 @@ def user_profile(request):
         return redirect("/task7/profile")
 
 
-@csrf_exempt
 def recovery(request):
 
     if request.method == "GET":
@@ -180,7 +174,6 @@ def recovery(request):
         )
 
 
-@csrf_exempt
 def recovery_new_pass(request):
 
     try:
@@ -220,7 +213,6 @@ def recovery_new_pass(request):
         return response
 
 
-@csrf_exempt
 def logout(request):
 
     response = redirect("/task7/login")
