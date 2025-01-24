@@ -18,6 +18,7 @@ from django.views.decorators.http import require_http_methods
 
 
 @require_http_methods(["POST"])
+@csrf_exempt
 def login(request):
     data = json.loads(request.body)
     email = data.get("email")
@@ -49,6 +50,7 @@ def login(request):
 
 
 @require_http_methods(["POST"])
+@csrf_exempt
 def register(request):
     data = json.loads(request.body)
     email = data.get("email")

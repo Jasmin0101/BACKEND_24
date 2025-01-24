@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
+from django.views.decorators.csrf import csrf_exempt
+
 favorite = []
 
 
@@ -13,6 +15,7 @@ favorite = []
 #     )
 
 
+@csrf_exempt
 def first_POST_request(request):
     if request.method == "POST":
         name = request.POST.get("name")
