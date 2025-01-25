@@ -137,7 +137,9 @@ SIMPLE_JWT = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://backend24-production.up.railway.app/",
+    "https://backend24-production.up.railway.app",
 ]
+CSRF_COOKIE_SECURE = True
+
 
 PORT = int(os.getenv("PORT", 8000))
