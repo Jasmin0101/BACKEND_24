@@ -9,6 +9,7 @@
     <h1>Профиль</h1>
     <p>Ваш текущий email: {{ email }}</p>
     <form method="POST" action="/task7/profile">
+      {% csrf_token %}
       <label for="email">Новая почта</label>
       <input
         type="email"

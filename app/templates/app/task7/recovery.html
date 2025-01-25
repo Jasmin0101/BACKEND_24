@@ -8,6 +8,7 @@
   <body>
     <h1>Восстановление пароля</h1>
     <form action="/task7/recovery" method="POST">
+      {% csrf_token %}
       <div>
         <label for="email">Введите вашу почту</label>
         <input
